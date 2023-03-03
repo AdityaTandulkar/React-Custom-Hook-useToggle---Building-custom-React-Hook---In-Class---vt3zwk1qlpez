@@ -1,7 +1,12 @@
-import React,{useCallback,useState} from 'react'
+import React, { useCallback, useState } from "react";
 
 const useToggle = () => {
-   
-  
+  const [isTextChanged, setText] = useState(false);
+
+  function setIsTextChanged(){
+    setText(!isTextChanged);
   }
-  export default useToggle;
+
+  return [isTextChanged, setIsTextChanged]
+};
+export default useToggle;
